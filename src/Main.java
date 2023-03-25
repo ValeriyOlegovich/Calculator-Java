@@ -4,14 +4,15 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        int a, b, r;
-
-        // Чтение строки, преобразование в массив
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        String[] m = s.split(" ");
+        String w = sc.nextLine();
+        System.out.println(calc(w));
+    }
+    public static String calc(String input) {
+        int a, b, r;
+        String[] m = input.split(" ");
         if (m.length != 3) {
-            System.out.printf("Exception! Expression: '%s' does not correspond to the technical task \n", s);
+            System.out.printf("Exception! Expression: '%s' does not correspond to the technical task \n", input);
             System.exit(0);
         }
 
@@ -39,7 +40,8 @@ public class Main {
             }
 
             r = calculation(a, b, m[1]);
-            System.out.println(r);
+            return Integer.toString(r);
+
         }
         catch (NumberFormatException nfe)
         {
@@ -74,9 +76,10 @@ public class Main {
                     }
                 }
             }
-            System.out.println(r2);
+            return r2;
 
         }
+
     }
 
     // Рассчет результата
